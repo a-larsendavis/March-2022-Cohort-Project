@@ -73,5 +73,12 @@ p{
 button{
     border:  #F5FAFA 5px solid;
     color:#6D929B;
-    font-size: 35px;
+    font-size: 15px;
+}
+
+/* Remove arrows from Number inputs (zipcode) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -3,7 +3,7 @@ require('dotenv').config() //grants access to all environment variables
 
 const express = require("express");
 const app = express();
-
+const { json } = require('express');
 const passport = require('passport')
 const LocalStrategy = require('passport-local');
 
@@ -54,13 +54,12 @@ const isLoggedIn = (req, res, next) => {
 };
 
 // ROOT HANDLING
-
 //Home Route
 app.get('/', (req, res) => {
   res.redirect('/login')
 })
 
-
+//Sign up page - User creation and data input
 app.get('/signup', (req, res) =>{
   res.render('signup')
 })
@@ -113,6 +112,20 @@ app.get("/logout", (req, res, next) => {
 });
 
 
+//Update User info- PUT PROFILE PAGE
+// Update - PUT
+app.put("/profile:username", (req, res) => {
+  let requestedUser = req.params.username;
+  UserModel.findById(requestedUser, (error, item)=>{
+    if(error) res.status(404).send({ error: "Username for updating does not exist" });
+    else{
+      item.save( (err, updatedItem)=>{
+        if(err) res.status.send( { err: "Unable to update DB" });
+        else res.json(updatedItem);
+      })
+    }
+  })
+});
 
 
 // LISTENER
