@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+body{
+    background:#C1DAD6DA url("assets/background.jpg")no-repeat fixed center;
+    font-size:1vw;
+    align-items: center;
+    position: relative;
+
+}
+
+
+
+
+h1{
+    font-family: 'Pacifico', cursive; 
+    font-size: 150px;
+    color: #6D929B;
+    margin: 35px;
+    padding:100px;
+    font-size:5vw ;
+    position: absolute;
+ 
+
+}
+
+.loginform{
+    color: #6D929B;
+    font-family: 'Pacifico', cursive; 
+    /* margin: auto;
+    width: 15%;
+    align-items: center; */
+    /* position: absolute */
+    width: 310px;
+    margin: 10vh auto;
+    border: 2px solid #6D929B;
+    box-shadow: 3px 3px 10px black;
+}
+
+ /* #login{
+    color: #6D929B;
+    font-family: 'Pacifico', cursive; 
+         
+}  */
+
+fieldset{
+    padding:15px;
+    margin:15px;
+    width:270px;
+    color:#6D929B ; 
+    border:#6D929B  solid 5px;
+}
+
+legend {
+    /* color:; */
+    font-weight:800; 
+ 
+} 
+
+
+
+input{
+    border:  #F5FAFA 20px solid;
+}
+
+p{
+    font-size: 50px;
+}
+
+
+button{
+    border:  #F5FAFA 5px solid;
+    color:#6D929B;
+    font-size: 35px;
+}
