@@ -24,9 +24,9 @@ let connectionObject = {
 
 // CONNECTION
 const mongoose = require("mongoose");
-const { DB, URI } = process.env;
+const { URI, DB } = process.env;
 
-const url = `${URI}/${DB}`
+const url = `${URI}/${DB}`;
 mongoose
   .connect(url, connectionObject)
   .then(() => console.log(`Connected to ${DB}`))
@@ -68,13 +68,16 @@ app.get('/home', isLoggedIn, (req, res) =>{
   res.render('home');
 })
 
+
+//New user isn't redirected to their home page. Redirect to thread Page.
 app.post("/signup", function(req, res) {
   var newUser = new UserModel({username: req.body.username});
   console.log(newUser);
   UserModel.register(newUser, req.body.password, function(err, user){
       if(err){ //Return to signup page if error logging in
+          console.log(url)
           console.log(err);
-          return res.render("signup", { data: err })
+          return res.render("signup")//, { data: err }
       } else { //redirect home if successful login
           passport.authenticate("local")(req, res, function(){
               res.redirect("/home");
