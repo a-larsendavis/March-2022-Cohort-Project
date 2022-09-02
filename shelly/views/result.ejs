@@ -1,0 +1,26 @@
+<h1>I am a results page</h1>
+
+<table border ="3">
+    <tr>
+        <th>fullname</th>
+        <th>birth</th>
+        <th>Email</th>
+        <th>zipcode</th>
+        <th>Address</th>
+        <th>phone</th>
+
+
+    </tr>
+
+    <% data.forEach(element => { %>
+        <tr>
+            <td><%= element.Fullname%></td>
+            <td><%= element.Birth%></td>
+            <td><%= element.Email%></td>
+            <td><%= element.Zipcode%></td>
+            <td><%= element.Address%></td>
+            <td><%= element.Phone%></td>
+        </tr>
+      
+     <% }) %>
+     </table>
