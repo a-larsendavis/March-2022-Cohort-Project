@@ -28,4 +28,4 @@ const PostSchema = new mongoose.Schema(
 );
 
 PostSchema.plugin(passportLocalMongoose);
-module.exports = mongoose.model("post", PostSchema);
+module.exports = mongoose.model("Post", PostSchema);

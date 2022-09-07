@@ -51,7 +51,7 @@ router.get('/profile', isLoggedIn, (req, res) =>{
 })
 
 
-//get neighborhood page (fetch data form db and send to thread page)
+//get neighborhood page (fetch data from db and send to thread page)
 router.get("/neighborhood", async (req, res) =>{
     try{
         //fetch all quotes from db
@@ -66,13 +66,11 @@ router.get("/neighborhood", async (req, res) =>{
 //get submit page
 router.get("/neighborhoodPost", (req, res) =>{
     if(req.isAuthenticated()){
-        res.render("/neighborhoodPost")
+        res.render("neighborhoodPost")
     }else{
         res.redirect("login");
     }
 });
-
-
 
 
 //POST
