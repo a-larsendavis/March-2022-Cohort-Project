@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/navbar.ejs") %>
+
+<!-- Home Neighborhood Thread-->
+<div class="row page_container">
+
+    <div class="col-md-10 m-auto">
+        <form action="/submit" method="post">
+            <h3>Make a Post for your neighbors!</h3>
+            <div class="mb-3" width="40%">
+                <label for="create-post" class="form-label">Post</label>
+                <textarea name="postit" id="create-post" cols="30" rows="10" maxlength="500" placeholder="Max 500 characters." ></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="color-input" class="form-label">Choose a color for your neighborhood posting</label>
+                <input type="radio" name="bgcolor" id="" value="#9CAA9C" checked>
+                <input type="radio" name="bgcolor" id="" value="#F5FAFA">
+                <input type="radio" name="bgcolor" id="" value="#6D929B">
+                <input type="radio" name="bgcolor" id="" value="#C1DAD6DA">
+            </div>
+            <input type="submit" value="Post It!" placeholder="Submit" name="postit">
+        </form>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer.ejs") %>

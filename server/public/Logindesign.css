@@ -8,7 +8,6 @@ body{
     font-size:1vw;
     align-items: center;
     position: relative;
-
 }
 
 
@@ -22,8 +21,6 @@ h1{
     padding:100px;
     font-size:5vw ;
     position: absolute;
- 
-
 }
 
 .loginform{
@@ -35,15 +32,21 @@ h1{
     /* position: absolute */
     width: 310px;
     margin: 10vh auto;
+    border-radius: 20px;
     border: 2px solid #6D929B;
     box-shadow: 3px 3px 10px black;
 }
 
- /* #login{
+.signup-form{
     color: #6D929B;
     font-family: 'Pacifico', cursive; 
-         
-}  */
+    height: 22vh;
+    width: 310px;
+    margin: 10vh auto;
+    border-radius: 20px;
+    border: 2px solid #6D929B;
+    box-shadow: 3px 3px 10px black;
+}
 
 fieldset{
     padding:15px;
@@ -51,22 +54,23 @@ fieldset{
     width:270px;
     color:#6D929B ; 
     border:#6D929B  solid 5px;
+    border-radius: 20px;
 }
 
 legend {
     /* color:; */
     font-weight:800; 
- 
 } 
 
 
 
 input{
-    border:  #F5FAFA 20px solid;
+    border: #F5FAFA 5px solid;
 }
 
 p{
-    font-size: 50px;
+    font-size: 20px;
+    margin-bottom: 0rem
 }
 
 
@@ -81,4 +85,9 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+#post-cards{
+    width: 40%;
+    font-size: 10px;
 }

@@ -1,97 +1,73 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: row;
-  margin: 0;
-}
-.col-1 {
-  background:#EFEFDE;
-  flex: 1.25;
+html, body {
   height: 100%;
-}
-.col-2 {
   display: flex;
   flex-direction: column;
-  flex: 5;
-}
-.content {
-  display: flex;
-  flex-direction: row;
-}
-.content > article {
-  flex: 3;
-  min-height: 60vh;
-  /* background: #D7E8D4 ; */
-  background-size: cover;
-}
-.content > aside {
-  background: #BD9A52;
-  flex: 0.5;
-}
-.content > nav {
-  flex: 0.75;
-}
-header {
-  background: #CEDFCE;
-  height: 14vh;
-}
-footer {
-  background: #9CAA9C;
-  height: 20vh;
-}
-header,
-footer,
-article,
-aside {
-  padding: 1em;
 }
 
+.page_container{
+  padding: 2% 15%;
+}
+
+/* Navbar */
+nav{
+  width:100%;
+}
+.nav-link{
+  color: #F5FAFA;
+}
+.navbar__style{
+  color: #6D929B;
+}
+
+/* Post Page */
+textarea{
+  resize: none;
+}
+
+/* Footer */
 p.footText {
   font-size: 9px;
-  color: white;
+  color: #F5FAFA;
   display: flex;
   align-items: center;
   flex-direction: inherit;
 }
 
-.navbutton {
-  width: 100%;
-  border: 0px;
-  height: 100%;
-}
-
-.navbutton:hover {
-  background-color:  #BD9A52;
-}
-
 .footerDiv {
-    height: 100%;
+  background: #9CAA9C;
+  height: 10vh;
+  width:100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: auto;
+  padding: 1em;
+
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+
+/* Neighborhood Postings */
+.post_content{
+  border: 5px solid #eee;
+  border-radius: 10px;
+  color: #F5FAFA;
+  -webkit-text-stroke: 0.5px #333;
+}
+
+.post__text{
+  height: 220px;
+  font-weight: 600;
+}
+
+/* Media Queries */
+@media screen and (min-width:991px) {
+  .page_container {
+    padding: 2% 7%;
   }
+}
 
-.container {
-    width: 400px;
-    
-    border: 2px solid black;
-    box-shadow: 3px 3px 10px black;
-    background-color: #429502;
+/* @media screen and (min-width:991px) {
+  .navbar_container {
+    padding: 2% 7%;
   }
-
-#loginContainer {
-    margin: 30vh auto;
-}
-
-#signUpContainer{
-    margin: 15vh auto;
-}
+} */
