@@ -78,7 +78,7 @@ router.get("/neighborhoodPost", (req, res) =>{
 router.post("/submit", async (req, res) =>{
     try{
         const post = new Posts({
-            quote:req.body.postit,
+            postit:req.body.postit,
             bgColor: req.body.bgcolor.substring(1) //bc color will send in hex format (#eeeee) so remove "#"
         });
         //save post
