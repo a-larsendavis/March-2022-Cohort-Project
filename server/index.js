@@ -137,18 +137,19 @@ app.use("/", postRoute);
 
 //Update User info- PUT PROFILE PAGE
 // Update - PUT
-app.put("/profile:username", (req, res) => {
-  let requestedUser = req.params.username;
-  UserModel.findById(requestedUser, (error, item)=>{
-    if(error) res.status(404).send({ error: "Username for updating does not exist" });
-    else{
-      item.save( (err, updatedItem)=>{
-        if(err) res.status.send( { err: "Unable to update DB" });
-        else res.json(updatedItem);
-      })
-    }
-  })
-});
+// app.put("/profile:username", (req, res) => {
+//   let requestedUser = req.params.username;
+//   console.log(requestedUser);
+//   UserModel.findById(requestedUser, (error, item)=>{
+//     if(error) res.status(404).send({ error: "Username for updating does not exist" });
+//     else{
+//       item.save( (err, updatedItem)=>{
+//         if(err) res.status.send( { err: "Unable to update DB" });
+//         else res.json(updatedItem);
+//       })
+//     }
+//   })
+// });
 
 // LISTENER
 const PORT = process.env.PORT || 3000;

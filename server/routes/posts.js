@@ -2,7 +2,7 @@ const router = require('express').Router();
 const passport = require("passport");
 
 
-//Require User Model
+//Require User Model fromt he models folder
 const User = require('../models/User');
 const Posts = require('../models/Posts');
 
@@ -41,13 +41,34 @@ router.get("/login", (req, res) =>{
         res.render("login");
     }
 });
-
+// Neighborhood Thread Page (Home)
 router.get('/neighborhood', isLoggedIn, (req, res) =>{
   res.render('neighborhood');
 })
 
 router.get('/profile', isLoggedIn, (req, res) =>{
   res.render("profile");
+})
+
+
+//Update user profile data
+router.post("/sendData", isLoggedIn, (req, res) =>{
+    console.log(req.session.passport.user)
+    console.log(req.body)
+    User.findByIdAndUpdate(req.session.passport.user,
+        {
+            $set : {
+                fullname: req.body.fullname,
+                birth: req.body.birth,
+                email: req.body.email,
+                zipcode: req.body.zipcode,
+                address: req.body.address,
+                phone: req.body.phone,
+            }
+        },
+        (err, user) =>{
+            res.redirect("/profile")
+        })
 })
 
 
@@ -62,7 +83,6 @@ router.get("/neighborhood", async (req, res) =>{
     }
 })
 
-
 //get submit page
 router.get("/neighborhoodPost", (req, res) =>{
     if(req.isAuthenticated()){
@@ -72,20 +92,20 @@ router.get("/neighborhoodPost", (req, res) =>{
     }
 });
 
-
 //POST
 //Submit a neighborhood post
 router.post("/submit", async (req, res) =>{
+    console.log(req.body.postit)
     try{
         const post = new Posts({
-            postit:req.body.postit,
+            postit: req.body.postit,
             bgColor: req.body.bgcolor.substring(1) //bc color will send in hex format (#eeeee) so remove "#"
         });
         //save post
         const savePost = post.save();
         //redirect to posts if successful
         !savePost && res.redirect("/submit");
-        res.redirect("neighborhood")
+        res.redirect("/neighborhood")
     }catch(err){
         res.send(err)
     }

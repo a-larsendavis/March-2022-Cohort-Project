@@ -2,7 +2,7 @@ const router = require('express').Router();
 const passport = require("passport");
 
 
-//Require User Model
+//Require User Model from models folder
 const UserModel = require('../models/User');
 
 //Create passport local strategy
@@ -69,6 +69,7 @@ router.post("/auth/login", (req, res) => {
             console.log(err)
         } else{
             passport.authenticate("local")(req, res, function(){
+                console.log(user);
                 res.redirect("/neighborhood");
             });
         }

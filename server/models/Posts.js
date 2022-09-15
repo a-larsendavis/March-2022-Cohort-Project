@@ -4,9 +4,8 @@ const passportLocalMongoose = require('passport-local-mongoose');
 //Post Schema
 const PostSchema = new mongoose.Schema(
     {
-        userId: {
+        username: {
             type:String,
-            required: true,
         },
         bgColor:{
             type:String,
