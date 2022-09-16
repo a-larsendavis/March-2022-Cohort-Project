@@ -17,7 +17,7 @@
 <div class="loginform">
     <form action="/auth/login" id="login" method="post">
         <fieldset>
-        <legend><i class="fa-solid fa-house-chimney-window"></i>Log In</legend>
+        <legend class="loginTitle"><i class="fa-solid fa-house-chimney-window"> </i> Log In! <i class="fa-solid fa-house-chimney-window"> </i> </legend>
         <p>Username</p> 
         <input type="text" id="username" name="username" placeholder="username" required>
         <br>
@@ -27,10 +27,11 @@
         <button type="submit">Submit</button>
     </fieldset>
     </form>
-    <div class="signup">
-        <a href="/signup"><button class="btn">Not a Member? Sign Up Here!</button></a>
-        </div>
+    
 </div>
+<div class="signup">
+    <a href="/signup"><button id="signUpbtn" class="btn">Not a Member? Sign Up Here!</button></a>
+    </div>
 
 
 <%- include("partials/footer.ejs") %>
