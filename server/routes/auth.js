@@ -25,7 +25,7 @@ passport.deserializeUser(function(id, done) {
 
 //register user in db
 router.post("/auth/signup", function(req, res) {
-  var newUser = new UserModel({username: req.body.username});
+  var newUser = new UserModel({username: req.body.username, zipcode: req.body.zipcode});
   console.log(newUser);
   UserModel.register(newUser, req.body.password, function(err, user){
       if(err){ //Return to signup page if error logging in
