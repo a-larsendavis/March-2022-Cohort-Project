@@ -7,18 +7,21 @@
     <div class="col-md-10 m-auto">
         <form action="/submit" method="post">
             <h3>Make a Post for your neighbors!</h3>
+            <br>
             <div class="mb-3" width="40%">
-                <label for="create-post" class="form-label">Post</label>
+                <label for="create-post" class="form-label"></label>
                 <textarea name="postit" id="create-post" cols="30" rows="10" maxlength="500" placeholder="Max 500 characters." ></textarea>
             </div>
             <div class="mb-3">
                 <label for="color-input" class="form-label">Choose a color for your neighborhood posting</label>
-                <input type="radio" name="bgcolor" id="" value="#9CAA9C" checked>
-                <input type="radio" name="bgcolor" id="" value="#F5FAFA">
-                <input type="radio" name="bgcolor" id="" value="#6D929B">
-                <input type="radio" name="bgcolor" id="" value="#C1DAD6DA">
+                <input type="radio" name="bgcolor" id="envy" value="#9CAA9C" checked><label for="envy">Light Envy</label>
+                <input type="radio" name="bgcolor" id="catskillwhite" value="#F5FAFA"><label for="catskillwhite">catskillwhite</label>
+                <input type="radio" name="bgcolor" id="gothic" value="#6D929B"><label for="gothic">gothic</label>
+                <input type="radio" name="bgcolor" id="graycyan" value="#C1DAD6DA"><label for="graycyan">graycyan</label>
+
+                
             </div>
-            <input type="submit" value="Post It!"  name="postButton">
+            <input type="submit" value="Post It!"  id="postButton">
         </form>
 
     </div>
@@ -26,3 +29,12 @@
 </div>
 
 <%- include("partials/footer.ejs") %>
+<!-- db.posts.insert({
+    zipcode: "12345",
+    bgColor:"6D929B",
+    postit:"A new post from me!",
+    img:"",
+    likes:[],
+    createdAt : ISODate("2022-09-10T02:35:06.410+0000"),
+    updatedAt : ISODate("2022-09-10T02:35:06.410+0000")
+}) -->

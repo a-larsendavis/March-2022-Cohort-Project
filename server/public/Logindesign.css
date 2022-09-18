@@ -143,7 +143,25 @@ input::-webkit-inner-spin-button {
 #signUpbtn:hover {
     color: #F5FAFA;
     outline-color: #6D929B;
-    transition-duration: 2s;
+    transition-duration: 1.25s;
+}
+
+#postButton{
+    width:35%;
+    border-radius: 20px;
+}
+
+#envy{
+    accent-color: #9CAA9C;
+}
+#catskillwhite{
+    accent-color: #F5FAFA;
+}
+#gothic{
+    accent-color: #6D929B;
+}
+#graycyan{
+    accent-color: #C1DAD6DA;
 }
 
 
@@ -157,3 +175,17 @@ input::-webkit-inner-spin-button {
 .fa-solid{
     padding: 0px 16px;
 }
+.mb-3{
+    flex-direction: row;
+    display: flex;
+}
+
+
+input[type=radio]{
+    height: 22px;
+    border-radius: 20px;
+    justify-content: left;
+    flex-direction: row;
+    width: 100%;
+}
+

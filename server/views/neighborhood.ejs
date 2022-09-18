@@ -8,25 +8,34 @@
 
     <div class="row">
 
-        <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-2 post_content p-0">
-            <p class="p-2 m-0 d-flex aligh-items-center justify-content-center text-center fs-6" id="post-cards">
-                Lorem ipsum dolor, sit amet Corporis 
-            </p>
-            <div class="post-card_bottom d-flex justify-content-between px-2" >
-                <div class="post-date">
-                    <i class="fa-regular fa-clock"></i>
-                    <span class="time_publish">today</span>
+        <!-- check to see if any posts are available ? show message  -->
+        <% allPosts = [] %> 
+        <% if (allPosts.length < 1  || allPosts === false){ %>
+            <div class="mt-5 text-center">No Posts to show!</div>
+        <%  } else { %>
+            <% allPosts.forEach(posts => { %>
+                <div class="col-md-6 col-lg-3 col-xl-3 col-xxl-2 post_content p-0">
+                    <p class="p-2 m-0 d-flex aligh-items-center justify-content-center text-center fs-6" id="post-cards">
+                        <%= post.postit %>
+                    </p>
+                    <div class="post-card_bottom d-flex justify-content-between px-2" >
+                        <div class="post-date">
+                            <i class="fa-regular fa-clock"></i>
+                            <span class="time_publish"><% new Date(post.createdAt).toLocaleDateString() %>></span>
+                        </div>
+                        <div class="post-likes d-flex">
+                            <form action="/posts/like" method="post">
+                                <button type="submit" name="likeBtn" class="bg-transparent border text-white">
+                                    <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </form>
+                            <span><%= post.likes %> </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="post-likes d-flex">
-                    <form action="/posts/like" method="post">
-                        <button type="submit" name="likeBtn" class="bg-transparent border text-white">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                    </form>
-                    <span>12</span>
-                </div>
-            </div>
-        </div>
+                <% }) %> 
+            <% } %> 
+        
     </div>
 </div>
 
