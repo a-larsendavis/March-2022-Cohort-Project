@@ -74,9 +74,10 @@ router.post("/sendData", isLoggedIn, (req, res) =>{
 
 //get neighborhood page (fetch data from db and send to thread page)
 router.get("/neighborhood", async (req, res) =>{
+    
     try{
         //fetch all quotes from db
-        const allPosts = await Posts.find();
+        const allPosts = await Posts.find({zipcode: `${req.body.zipcode}`});
         res.render("neighborhood", {allPosts, isAuth:req.isAuthenticated() });
     }catch(err){
         res.send(err);
@@ -94,10 +95,15 @@ router.get("/neighborhoodPost", (req, res) =>{
 
 //POST
 //Submit a neighborhood post
-router.post("/submit", async (req, res) =>{
-    console.log(req.body.postit)
+router.post("/submit/username/:username", async (req, res) =>{
+    console.log("POST DESCRIPTION", req.body.postit)
+    console.log("USERNAME: ", req.body.username)
+    console.log("ZIPCODE: ", req.body.zipcode)
+    console.log("bgColor: ", req.body.bgcolor.substring(1))
     try{
         const post = new Posts({
+            username: req.body.username,
+            zipcode: req.body.zipcode,
             postit: req.body.postit,
             bgColor: req.body.bgcolor.substring(1) //bc color will send in hex format (#eeeee) so remove "#"
         });

@@ -32,7 +32,7 @@
     <div class="signup-form">
       <div class="d-flex flex-column bd-highlight mb-3">
         <form action="/auth/signup" method="post">
-          <fieldset>
+          <fieldset class="signupFieldSet">
             <legend>
               <i class="fa-solid fa-house-chimney-window"></i>Sign up, neighbor!
             </legend>
@@ -66,6 +66,9 @@
         </form>
       </div>
     </div>
+    <div class="w3-panel w3-panel">
+      <h4>Just so you know!</h4>
+      <p>Commune uses your provided zipcode to connect you to your closet neighbors.</p>
+    </div>
     <%- include("partials/footer.ejs") %>
-  </body>
-</html>
+
