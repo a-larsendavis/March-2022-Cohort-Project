@@ -1,0 +1,13 @@
+*{
+  margin: 0;
+  border: 0;
+}
+
+.formSub{
+  font-family: 'Pacifico', cursive; 
+    color: #6D929B;
+    margin: 10px 10px;
+    text-align: center;
+    font-size: 30px;
+}
+

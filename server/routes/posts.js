@@ -24,6 +24,29 @@ router.get("/", (req, res) =>{
     }
 });
 
+
+//get resources page
+router.get('/resources', isLoggedIn, (req, res) =>{
+    res.render("resources");
+});
+
+  //get events page
+router.get('/events', isLoggedIn, (req, res) =>{
+    res.render("events");
+});
+
+  //get neighborhoodwatch resource page
+router.get('/neighborhoodwatch', isLoggedIn, (req, res) =>{
+    res.render("neighborhoodwatch");
+});
+
+//get restaurant resource page
+router.get('/restaurants', isLoggedIn, (req, res) =>{
+    res.render("restaurants");
+});
+
+
+
 //get signup page
 router.get("/signup", (req, res) =>{
     if(req.isAuthenticated()){

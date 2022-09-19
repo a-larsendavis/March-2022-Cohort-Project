@@ -61,6 +61,7 @@ app.use("/", authRoute);
 app.use("/", postRoute);
 
 
+
 // BLUEPRINTS
 //const UserModel = require('./models/User');
 
@@ -76,6 +77,7 @@ app.use("/", postRoute);
 // app.get('/', (req, res) => {
 //   res.redirect('/login')
 // })
+
 
 // //Sign up page - User creation and data input
 // app.get('/signup', (req, res) =>{
@@ -152,6 +154,8 @@ app.use("/", postRoute);
 //     }
 //   })
 // });
+
+
 
 // LISTENER
 const PORT = process.env.PORT || 3000;
