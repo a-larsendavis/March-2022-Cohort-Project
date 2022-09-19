@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  border: 0;
+}
+
+.resourcesWrapper{
+  font-family: 'Pacifico', cursive; 
+    color: #6D929B;
+    margin: 10px 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.resourceIcon{
+  list-style-type: none;
+}
+
+img.watchImg {
+  width: 30%;
+  height: 30%;
+  margin-bottom: 20px;
+}
+
+img.dogImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.linkIcon{
+  font-size: 18px;
+}
+
+img.NNWImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 15px;
+  
+}
+
+img.usccaImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 15px;
+}
+
+img.weatherImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 15px;
+}
