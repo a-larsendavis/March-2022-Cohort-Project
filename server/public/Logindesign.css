@@ -4,14 +4,10 @@
 
 body{
     background:#C1DAD6DA;
-    font-size:1vw;
     align-items: center;
     position: relative;
     padding: 0;
 }
-
-
-
 
 h1{
     font-family: 'Pacifico', cursive; 
@@ -79,7 +75,6 @@ legend {
     font-weight:800; 
 } 
 
-
 input{
     border: #F5FAFA 3px solid;
     width: 100%;
@@ -93,7 +88,6 @@ p{
     margin-bottom: 0rem;
     padding: 4px 4px;
 }
-
 
 button{
     border:  #F5FAFA 3px solid;
@@ -123,10 +117,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-#post-cards{
-    width: 40%;
-    font-size: 10px;
-}
 
 .loginTitle{
     position: relative;
@@ -146,25 +136,6 @@ input::-webkit-inner-spin-button {
     transition-duration: 1.25s;
 }
 
-#postButton{
-    width:35%;
-    border-radius: 20px;
-}
-
-#envy{
-    accent-color: #9CAA9C;
-}
-#catskillwhite{
-    accent-color: #F5FAFA;
-}
-#gothic{
-    accent-color: #6D929B;
-}
-#graycyan{
-    accent-color: #C1DAD6DA;
-}
-
-
 .titleApp{
     display: flex;
     align-items: center;
@@ -175,17 +146,3 @@ input::-webkit-inner-spin-button {
 .fa-solid{
     padding: 0px 16px;
 }
-.mb-3{
-    flex-direction: row;
-    display: flex;
-}
-
-
-input[type=radio]{
-    height: 22px;
-    border-radius: 20px;
-    justify-content: left;
-    flex-direction: row;
-    width: 100%;
-}
-

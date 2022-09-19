@@ -1,0 +1,59 @@
+.post_content{
+    /* width: 36%; */
+    margin: 20px 20px;
+    padding: 16px 18px;
+    box-sizing:unset;
+    
+}
+
+.row{
+    width: 100%;
+    
+}
+
+.mb-3{
+    flex-direction: row;
+    display: flex;
+}
+
+.post-card_bottom{
+    display: flex;
+    flex-direction: row;
+}
+
+.fa-regular{
+    border:none;
+}
+
+#post-cards{
+    width: 40%;
+    font-size: 10px;
+}
+
+#postButton{
+    width:35%;
+    border-radius: 20px;
+}
+
+#envy{
+    accent-color: #9CAA9C;
+}
+#catskillwhite{
+    accent-color: #F5FAFA;
+}
+#gothic{
+    accent-color: #6D929B;
+}
+#graycyan{
+    accent-color: #C1DAD6DA;
+}
+
+input[type=radio]{
+    height: 22px;
+    border-radius: 20px;
+    justify-content: left;
+    flex-direction: row;
+    width: 100%;
+}
+
+

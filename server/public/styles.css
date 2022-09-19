@@ -5,7 +5,13 @@ html, body {
 }
 
 .page_container{
-  padding: 2% 15%;
+  height: 90%;
+  /* Prevent Footer overlapping content */
+  overflow:auto;
+}
+
+.formfirst{
+  height: 100%;
 }
 
 /* Navbar */
@@ -14,6 +20,7 @@ nav{
 }
 .nav-link{
   color: #F5FAFA;
+  margin-left: 15px;
 }
 .navbar__style{
   color: #6D929B;
@@ -35,13 +42,14 @@ p.footText {
 
 .footerDiv {
   background: #9CAA9C;
-  height: 10vh;
+  height: 6%;
   width:100%;
   display: flex;
   justify-content: center;
-  margin-top: auto;
-  padding: 1em;
-
+  /* Stick footer to bottom of page */
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 
@@ -51,6 +59,7 @@ p.footText {
   border: 5px solid #eee;
   border-radius: 10px;
   color: #F5FAFA;
+  /* specify color and width text charact strokes */
   -webkit-text-stroke: 0.5px #333;
 }
 
@@ -60,14 +69,9 @@ p.footText {
 }
 
 /* Media Queries */
+/* Make adjustments to the screen */
 @media screen and (min-width:991px) {
   .page_container {
-    padding: 2% 7%;
+    padding: 2% 7% 4% 7%;
   }
 }
-
-/* @media screen and (min-width:991px) {
-  .navbar_container {
-    padding: 2% 7%;
-  }
-} */
