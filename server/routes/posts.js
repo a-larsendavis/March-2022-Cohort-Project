@@ -92,19 +92,35 @@ router.post("/sendData", isLoggedIn, (req, res) =>{
 
 /// !!! DOES NOT WORK
 //get neighborhood page (fetch data from db and send to thread page)
+// router.get("/neighborhood", isLoggedIn, (req, res) =>{
+//     let userId = req.session.passport.user;
+//     console.log(`userId: ${userId}`); 
+//     //console.log(req.session.passport)  {_id: req.session.passport.user}
+//     let allPosts = [{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"}]
+//     //let allPosts = Posts.find();
+//     //console.log(allPosts);
+//     // console.log(req.session.passport)
+//     // //fetch all quotes from db
+//     // User.findOne(req.session.passport.user, {username: req.session.passport.username})
+//     res.render("neighborhood", {allPosts: allPosts});
+// })
+
+
+// !!!TEST
 router.get("/neighborhood", isLoggedIn, (req, res) =>{
-    console.log(req.session.passport.user) 
-    let zippy = User.findById({_id: req.session.passport.user})
-    console.log(`zippy: ${zippy}`)
-    //console.log(req.session.passport) 
-    //let allPosts = [{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"}]
-    let allPosts = Posts.find({_id: req.session.passport.user});
-    //console.log(allPosts);
-    // console.log(req.session.passport)
-    // //fetch all quotes from db
-    // User.findOne(req.session.passport.user, {username: req.session.passport.username})
-    res.render("neighborhood", {allPosts: allPosts});
-})
+    Posts.find({}, (err, results)=>{
+      if(err){
+        res.status(400).json({message: "Not able to find the data in the DB"}) 
+      } else{
+        if((results.length ===0)){
+          console.log("Everything is good. Just no data.")
+          res.send("No data in database")
+        }else{
+          res.render("neighborhood", {allPosts: results});
+        }
+      }
+    })
+  })
 
 
 
