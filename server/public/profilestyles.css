@@ -1,0 +1,30 @@
+h4{
+    text-align: center;
+}
+
+label{
+    font-family: 'Pacifico', cursive; 
+    font-size: 30px;
+    color: #6D929B;
+}
+
+.formfirst{
+    color: #6D929B;
+    font-family: 'Pacifico', cursive; 
+    width:25 px;
+    margin: 15px ;
+    border-radius: 10px ;
+    box-shadow: 1px 1px 5px #6D929B;
+    padding: 0;
+    padding: 8px 8px;
+    flex-direction: column;
+} 
+
+
+button{
+    border:  #F5FAFA 5px solid;
+    color:#6D929B;
+    font-size: 15px;
+    border-radius: 10px ;
+}
+

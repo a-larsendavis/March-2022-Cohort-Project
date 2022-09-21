@@ -29,7 +29,7 @@ router.post("/auth/signup", function(req, res) {
   console.log(newUser);
   UserModel.register(newUser, req.body.password, function(err, user){
       if(err){ //Return to signup page if error logging in
-          console.log(url)
+        //   console.log(url)
           console.log(err);
           return res.render("signup")//, { data: err }
       } else { //redirect home if successful login

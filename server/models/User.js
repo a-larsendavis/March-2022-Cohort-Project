@@ -12,9 +12,7 @@ let userSchema = new mongoose.Schema({
     zipcode:String,
     address:String,
     phone:String,
-    familymember1:String,
-    familymember2:String,
-    familymember3:String
+   
 })
 
 userSchema.plugin(passportLocalMongoose);

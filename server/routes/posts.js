@@ -65,8 +65,21 @@ router.get("/login", (req, res) =>{
     }
 });
 
+//get user profile page  
 router.get('/profile', isLoggedIn, (req, res) =>{
-  res.render("profile");
+  // 1. read user profile from DB
+  console.log(req.session.passport.user);
+  User.findById(req.session.passport.user, (err, result) => {
+    if (err){
+        console.log(err);
+    }
+    else{
+        console.log("Result : ", result);
+        // 2. pass user profile into profile.ejs 
+        res.render("profile", {userResult: result});
+    }
+  })
+  
 })
 
 
@@ -116,6 +129,7 @@ router.get("/neighborhood", isLoggedIn, (req, res) =>{
           console.log("Everything is good. Just no data.")
           res.send("No data in database")
         }else{
+          
           res.render("neighborhood", {allPosts: results});
         }
       }
@@ -156,7 +170,19 @@ router.post("/submit", async (req, res) =>{
 })
 
 //like posts
+router.post("/like", async (req, res) =>{
+    console.log("in like route")
+    try{
+       //find the post to update likes
+       const post = await post.findById(req.body.like);
+       const updateLikes = await post.updateOne({like: post.like +1});
+      //redirect to the neighborhood page 
+      res.redirect('/neighborhood')
+    }catch(err){
+        res.send(err);
+    }
 
+})
 
 
 //export
