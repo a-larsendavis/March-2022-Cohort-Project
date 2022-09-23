@@ -1,0 +1,77 @@
+*{
+  margin-bottom: 0;
+  border: 0;
+}
+
+body{
+  background-color: #C1DAD6DA;
+}
+
+p{
+  font-family: 'Pacifico', cursive; 
+    color: #6D929B;
+    font-size: 30px;
+}
+
+p.quote{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
+
+
+
+.title{
+  margin-bottom: 5px;
+}
+
+p{
+  margin-bottom: 5px;
+}
+
+
+.box{
+  margin-left: 10%;
+ margin-bottom: -60%;
+  margin-top: 20px;
+}
+
+.albertImg{
+  position: relative;
+ height:30%;
+ width: 35%;
+}
+
+.jobsImg{
+  position: relative;
+  height: 30%;
+  width: 35%;
+}
+
+
+
+
+.clicknimg{
+  font-weight: bold;
+  color: #6D929B;
+  margin-top: 10%;
+}
+
+
+.top {
+display: inline-block;
+  margin-left: 3%;
+  position: sticky;
+  margin-top: calc(100vh + var(--offset));
+  
+  /* visual styling */
+  text-decoration: none;
+  font-family: sans-serif;
+  color: #fff;
+  background: #000;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 1%;
+}

@@ -45,6 +45,15 @@ router.get('/restaurants', isLoggedIn, (req, res) =>{
     res.render("restaurants");
 });
 
+//get pets resource page
+router.get('/pets', isLoggedIn, (req, res) =>{
+    res.render("pets");
+});
+
+//get pets resource page
+router.get('/courses', isLoggedIn, (req, res) =>{
+    res.render("courses");
+});
 
 
 //get signup page

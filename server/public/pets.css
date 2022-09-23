@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0; 
+
+}
+
+body{
+  background-image: url("./assets/petWallpaper.jpg");
+  background-size: 100% 100%;
+}
+
+p{
+  font-family: 'Pacifico', cursive; 
+    color: #6D929B;
+    margin-top: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+a:hover{
+  color: silver;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+ 
+}
+
+ul{
+  list-style: none;
+}
+
+
+/*.box1{
+  width: 30%;
+  border: 1px solid transparent;
+font-size: 20px;
+color: white;
+margin-top: 10px;
+margin-left:50%;
+}
+
+
+
+.box2{
+  width: 30%;
+  border: 1px solid transparent;
+font-size: 20px;
+color: white;
+margin-top: 10px;
+margin-right:50%;
+}
+
+
+.box3{
+  width: 30%;
+  border: 1px solid transparent;
+font-size: 20px;
+color: white;
+margin-top: 10px;
+}*/
+
+.box1{
+  padding-top: 10px;
+  color: red;
+  margin-right: 20%;
+  box-shadow: -5px -4px 6px -3px pink;
+  }
+
+.box2{
+  color: red;
+  margin-left: 10%;
+  box-shadow: -5px -4px 6px -3px pink;
+}
+
+.box3{
+color: red;
+margin-left:20%;
+box-shadow: -5px -4px 6px -3px pink;
+}
+
+

@@ -3,12 +3,23 @@
   border: 0;
 }
 
+p{
+    font-family: 'Pacifico', cursive; 
+      color: #6D929B;
+      font-size: 50px;
+}
+
 .resourcesWrapper{
   font-family: 'Pacifico', cursive; 
     color: #6D929B;
     margin: 10px 10px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    border: 5px solid rgb(4, 4, 140);
+    background-color: white;
+    border-radius: 30px;
+    padding:  5px 5px 5px 5px;
 }
 
 .resourceIcon{
@@ -57,3 +68,17 @@ img.weatherImg{
   object-fit: cover;
   margin-top: 15px;
 }
+
+
+.resourceIcon{
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.link{
+  color: rgb(4, 4, 140);
+  font-weight: bold;
+  font-family: 'Pacifico', cursive; 
+  font-size: 30px;
+}
+

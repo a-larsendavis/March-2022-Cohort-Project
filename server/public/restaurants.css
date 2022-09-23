@@ -1,0 +1,62 @@
+*{
+  margin: 0;
+  border: 0;
+}
+
+p{
+  font-family: 'Pacifico', cursive; 
+    color: #6D929B;;
+    margin: 10px 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.formSub{
+  font-family: 'Pacifico', cursive; 
+    color: #6D929B;;
+    margin: 10px 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.postR{
+  border: solid pink;
+  position: relative; right: 10%;
+}
+
+.postB{
+  border: solid pink;
+  position: relative;left: 10%;
+}
+
+.postit-yellow {
+  background-color: rgb(255, 255, 0);
+  transform: rotate(-2deg);
+}
+
+.postit-blue {
+  background-color: lightblue;
+  transform: rotate(2deg);
+}
+
+p.name{
+  color: black;
+  font-size: 20px;
+}
+
+.restaurantImg {
+  width: 250px;
+  height: 200px;
+  margin-left: 40px;
+ }
+
+.barImg {
+  width: 300px;
+  height: 150px;
+  margin-left: 40px;
+ }
+
+.barImg2 {
+  width: 300px;
+  height: 200px;
+}
