@@ -6,6 +6,12 @@
     
 }
 
+h3{
+    font-family: 'Pacifico', cursive; 
+    font-size: 35px;
+    color: #6D929B;
+}
+
 .row{
     width: 100%;
     
@@ -14,11 +20,20 @@
 .mb-3{
     flex-direction: row;
     display: flex;
+    color: #6D929B;
+    font-family: 'Pacifico', cursive; 
+    font-size: 15 px;
 }
 
 .post-card_bottom{
     display: flex;
     flex-direction: row;
+}
+
+#postButton{
+    font-family: 'Pacifico', cursive; 
+    font-size: 15 px;
+    color: #6D929B;
 }
 
 .fa-regular{
@@ -48,12 +63,21 @@
     accent-color: #C1DAD6DA;
 }
 
+.form-label{
+    font-family: 'Pacifico', cursive; 
+    font-size: 25px;
+    color: #6D929B;
+}
+
+
+
 input[type=radio]{
     height: 22px;
     border-radius: 20px;
     justify-content: left;
     flex-direction: row;
     width: 100%;
+    
 }
 
 
