@@ -26,6 +26,12 @@ h3{
     color: #6D929B;
 }
 
+h3{
+    font-family: 'Pacifico', cursive; 
+    font-size: 35px;
+    color: #6D929B;
+}
+
 .row{
     width: 80%;
 }
