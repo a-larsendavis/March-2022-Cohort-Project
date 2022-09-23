@@ -26,7 +26,7 @@ passport.deserializeUser(function(id, done) {
 //register user in db
 router.post("/auth/signup", function(req, res) {
   var newUser = new UserModel({username: req.body.username, zipcode: req.body.zipcode});
-  console.log(newUser);
+  //console.log(newUser);
   UserModel.register(newUser, req.body.password, function(err, user){
       if(err){ //Return to signup page if error logging in
         //   console.log(url)
@@ -39,21 +39,6 @@ router.post("/auth/signup", function(req, res) {
       }
   })
 });
-// router.post("/auth/signup", async (req, res) =>{
-//     try{
-//         //register user
-//         const registerUser = await UserModel.register({username: req.body.username}, req.body.password );
-//         if(registerUser){
-//             passport.authenticate("local")(req, res, function(){
-//                 res.redirect("/neighborhood");
-//             });
-//         }else{
-//             res.redirect("/login")
-//         }
-//     }catch(err){
-//         res.send(err);
-//     }
-// });
 
 
 //login user
@@ -69,7 +54,7 @@ router.post("/auth/login", (req, res) => {
             console.log(err)
         } else{
             passport.authenticate("local")(req, res, function(){
-                console.log(user);
+                //console.log(user);
                 res.redirect("/neighborhood");
             });
         }

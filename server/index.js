@@ -7,8 +7,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const session = require('express-session');
 const ejs = require('ejs');
-const morgan = require('morgan');
-app.use(morgan('common'))
+const logger = require("morgan");
+app.use(logger("dev"));
 
 //require routers
 const authRoute = require("./routes/auth");

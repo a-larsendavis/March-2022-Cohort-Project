@@ -12,16 +12,19 @@ const PostSchema = new mongoose.Schema(
             default:"9CAA9C",
         },
         postit: {
-            type: String,
+            type:String,
             max: 500,
         },
         img: {
-            type: String,
+            type:String,
         },
         likes: {
-            type: Array,
+            type:Array,
             default: [],
         },
+        zipcode: {
+            type:String,
+        }
     },
     { timestamps: true }
 );

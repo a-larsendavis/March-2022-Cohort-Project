@@ -26,7 +26,7 @@
                     <div class="post-card_bottom d-flex justify-content-between px-2" >
                         <div class="post-date">
                             <i class="fa-regular fa-clock"></i>
-                            <span class="time_publish"><%= new Date(post.createdAt).toLocaleDateString() %>></span>
+                            <span class="time_publish text-black"><%= new Date(post.createdAt).toLocaleDateString() %>></span>
                         </div>
                         <div class="post-likes d-flex">
                             <form action="/like" method="post">
