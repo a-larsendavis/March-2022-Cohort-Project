@@ -1,9 +1,29 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+
 .post_content{
-    /* width: 36%; */
+    width: 60%;
     margin: 20px 20px;
     padding: 16px 18px;
-    box-sizing:unset;
-    
+    color: black;
+    margin-left: 40%;
+    -webkit-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 4px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.postContent{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+h3{
+    font-family: 'Pacifico', cursive; 
+    font-size: 35px;
+    color: #6D929B;
 }
 
 h3{
@@ -13,9 +33,36 @@ h3{
 }
 
 .row{
-    width: 100%;
+    width: 80%;
+}
+
+.profileImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 80%;
+}
+
+.username{
+ font-weight: bold;
+}
+
+.imgClock{
+    width: 6%;
+    height: fit-content;
+    margin-right: 5px;
     
 }
+
+.post-date{
+    display: flex;
+}
+
+.imgHeart{
+    width: 9%;
+    margin-right: 3px;
+    margin-left: 70%;
+}
+
 
 .mb-3{
     flex-direction: row;
@@ -23,6 +70,23 @@ h3{
     color: #6D929B;
     font-family: 'Pacifico', cursive; 
     font-size: 15 px;
+}
+
+.pageTitle{
+    font-family: 'Pacifico', cursive; 
+    color: #6D929B;
+    font-size: 30px;
+}
+
+button{
+    display: flex;
+    border: none;
+}
+
+
+
+.likeCounter{
+    color: black;
 }
 
 .post-card_bottom{
@@ -41,9 +105,10 @@ h3{
 }
 
 #post-cards{
-    width: 40%;
-    font-size: 10px;
+   
+    font-size: 20px;
 }
+
 
 #postButton{
     width:35%;
