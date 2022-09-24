@@ -4,6 +4,10 @@ const passportLocalMongoose = require('passport-local-mongoose');
 //Post Schema
 const PostSchema = new mongoose.Schema(
     {
+        user:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'users'
+        },
         zipcode: {
             type:String,
         },
@@ -18,10 +22,14 @@ const PostSchema = new mongoose.Schema(
         img: {
             type: String,
         },
-        likes: {
-            type: Array,
-            default: [],
-        },
+        likes: [
+            {
+                user:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:'users'
+                }
+            }
+        ]
     },
     { timestamps: true }
 );

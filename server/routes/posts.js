@@ -174,6 +174,7 @@ router.post("/submit", async (req, res) =>{
     console.log("bgColor: ", req.body.bgcolor.substring(1))
     try{
         const post = new Posts({
+            user: req.user.id,
             postit: req.body.postit,
             bgColor: req.body.bgcolor.substring(1) //bc color will send in hex format (#eeeee) so remove "#"
         });
@@ -188,19 +189,30 @@ router.post("/submit", async (req, res) =>{
 })
 
 //like posts
-router.post("/like", async (req, res) =>{
-    console.log("in like route")
+router.post("/like/:id", isLoggedIn, async (req, res) =>{
     try{
        //find the post to update likes
-       const post = await post.findById(req.body.like);
-       const updateLikes = await post.updateOne({like: post.like +1});
-      //redirect to the neighborhood page 
-      res.redirect('/neighborhood')
+       const post = await Posts.findById(req.params.id);
+    
+       // check if the post has already been liked
+      if(post.likes.filter(like => like.user.toString() === req.user.id).length> 0){
+
+        return res.redirect('/neighborhood')
+      }
+      post.likes.unshift({ user : req.user.id});
+      
+      await post.save();
+      return res.redirect('/neighborhood')
+
+
+      res.json(post.likes);
     }catch(err){
-        res.send(err);
+        console.error(err.message);
+        res.status(500).send('Server Error')
     }
 });
 
+});
 
 
 //export
