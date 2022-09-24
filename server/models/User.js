@@ -12,8 +12,11 @@ let userSchema = new mongoose.Schema({
     zipcode:String,
     address:String,
     phone:String,
-   
-})
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
+});
 
 userSchema.plugin(passportLocalMongoose);
 

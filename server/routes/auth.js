@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const passport = require("passport");
+const User = require('../models/User');
 
 
 //Require User Model from models folder
@@ -18,9 +19,6 @@ passport.deserializeUser(function(id, done) {
         done(err, user);
     });
 });
-
-
-
 
 
 //register user in db
@@ -75,6 +73,18 @@ router.post("/auth/login", (req, res) => {
         }
     });
 });
+
+//delete user
+router.get("/delete/:_id", async (req, res) => { //:id allows us to delete an account by user id that is provided by mongoDB
+    if(req.body.userId === req.params.id || req.body.isAdmin){
+      try{
+        User.findOneAndDelete({ _id: req.user.id }).then();
+        return res.redirect("/login");
+      } catch (err) {
+        return res.status(500).json(err);
+      }
+    }
+  });
 
 //logout
 router.get("/auth/logout", (req, res, next) => {

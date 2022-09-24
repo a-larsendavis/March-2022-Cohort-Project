@@ -55,6 +55,15 @@ router.get('/courses', isLoggedIn, (req, res) =>{
     res.render("courses");
 });
 
+//settings
+router.get('/profileSettings', isLoggedIn, (req, res) => {
+    res.render("settings")
+});
+
+router.get('/account', isLoggedIn, (req, res) => {
+    res.render("account")
+});
+
 
 //get signup page
 router.get("/signup", (req, res) =>{
@@ -92,7 +101,7 @@ router.get('/profile', isLoggedIn, (req, res) =>{
 })
 
 
-//Update user profile data
+//Update user profile data Route.put????
 router.post("/sendData", isLoggedIn, (req, res) =>{
     console.log(req.session.passport.user)
     console.log(req.body)
@@ -201,6 +210,7 @@ router.post("/like/:id", isLoggedIn, async (req, res) =>{
         console.error(err.message);
         res.status(500).send('Server Error')
     }
+});
 
 });
 
