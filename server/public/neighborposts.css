@@ -145,4 +145,6 @@ input[type=radio]{
     
 }
 
-
+.trashCan:hover{
+    cursor:pointer;
+}

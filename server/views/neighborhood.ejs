@@ -32,17 +32,26 @@
                             <span class="time_publish"><%= new Date(post.createdAt).toLocaleDateString() %></span>
                         
                         <div class="post-likes">
-                            <form action="/like" method="post">
+                            <form action="/like/<%=post._id %>" method="post">
                                 <button type="submit" name="like" value="<%=post._id %> " class="bg-transparent text-white">
                                     <img class="imgHeart" src="./assets/love.png" alt="hear for likes">
-                                    <span class="likeCounter">10 Likes</span>
+                                    <span class="likeCounter"><%=post.likes.length %> Likes</span>
                                 </button>
+                              
                             </form>
-                            <span><%= post.likes %> </span>
+                          
+                            
+                            
+                           
                         </div>
+                       
                     </div>
+                    
+                    <span class="trashCan"><i class="fa fa-trash-alt"></i></span>
+                   
+                  </div>
                 </div>
-            </div>
+                
                 <% }) %> 
             <% } %> 
         
@@ -50,3 +59,10 @@
 </div>
 
     <%- include("partials/footer.ejs") %>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script src="scripts/deletePost.js"></script>
