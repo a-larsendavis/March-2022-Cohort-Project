@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/navbar.ejs") %>
+<link rel="stylesheet" href="settings.css" >
+<script src="https://kit.fontawesome.com/19484fbcef.js" crossorigin="anonymous"></script>
+
+<div class="profileCover">
+ <img class="profileCoverImg" src="./assets/post5.jpg" alt="">
+  <img class="profileImg" src="./assets/friend.JPG" alt="profile settings image">
+ </div>
+</div>
+
+<div class="sideBar">
+  <p>Settings</p>
+  <div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" placeholder="Search">
+       <button type="submit" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+ </div>
+  <ul class="optionsList">
+    <li><a class="link" aria-current="page" href="/profile">Profile Page</a></li>
+    <li>Privacy</li>
+    <li>Security</li>
+    <li><a class="link" aria-current="page" href="/account">Account</a></li>
+    <li>Help</li>
+    <li>Contact Us</li>
+  </ul>
+</div>
+
+<%- include("partials/footer.ejs") %>
