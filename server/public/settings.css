@@ -53,5 +53,14 @@
 }
 
 button{
-  border: solid 5px pink;
+  border: solid 5px red;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
 }
+
+p.alert{
+  color: red;
+}
+
