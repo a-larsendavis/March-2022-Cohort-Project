@@ -57,6 +57,8 @@
                         value="<%= userResult.zipcode %>">
                     </div>
 
+                    
+
                     <div class="inputfield">
                         <i class='fas fa-home' style='font-size:24px'></i>
                         <label>Address</label>
@@ -76,7 +78,17 @@
                         name="phone" 
                         placeholder="Enter your Phone number" 
                         value="<%= userResult.phone %>">
-                     <br><br>
+
+                     <label for="prim-phone">Primary Phone (User Selection: <%= userResult.primephone %>)</label>
+                     <div class="inputfield">
+                         <select name="primephone" id="phones-select">
+                             <option value="">--Please choose an option--</option>
+                             <option value="Mobile">Mobile</option>
+                             <option value="Home">Home</option>
+                             <option value="Work">Work</option>
+                         </select>
+                     </div>
+                     <br>
                      <button id="profileSubmit" type="submit">Submit</button>
                      </div>
                 </div>           

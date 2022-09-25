@@ -1,8 +1,7 @@
 const router = require('express').Router();
-//const passport = require("passport");
 
 
-//Require User Model fromt he models folder
+// Require User Model fromt he models folder
 const User = require('../models/User');
 const Posts = require('../models/Posts');
 
@@ -14,8 +13,8 @@ const isLoggedIn = (req, res, next) => {
     res.redirect("/login");
   };
 
-//Create routes
-//get main neighborhood thread page
+// Create routes
+// get main neighborhood thread page
 router.get("/", (req, res) =>{
     if(req.isAuthenticated()){
         res.redirect("/neighborhood")
@@ -25,47 +24,48 @@ router.get("/", (req, res) =>{
 });
 
 
-//get resources page
+// get resources page
 router.get('/resources', isLoggedIn, (req, res) =>{
     res.render("resources");
 });
 
-  //get events page
+// get events page
 router.get('/events', isLoggedIn, (req, res) =>{
     res.render("events");
 });
 
-  //get neighborhoodwatch resource page
+// get neighborhoodwatch resource page
 router.get('/neighborhoodwatch', isLoggedIn, (req, res) =>{
     res.render("neighborhoodwatch");
 });
 
-//get restaurant resource page
+// get restaurant resource page
 router.get('/restaurants', isLoggedIn, (req, res) =>{
     res.render("restaurants");
 });
 
-//get pets resource page
+// get pets resource page
 router.get('/pets', isLoggedIn, (req, res) =>{
     res.render("pets");
 });
 
-//get pets resource page
+// get pets resource page
 router.get('/courses', isLoggedIn, (req, res) =>{
     res.render("courses");
 });
 
-//settings
+// settings
 router.get('/profileSettings', isLoggedIn, (req, res) => {
     res.render("settings")
 });
 
+// get account page
 router.get('/account', isLoggedIn, (req, res) => {
     res.render("account")
 });
 
 
-//get signup page
+// get signup page
 router.get("/signup", (req, res) =>{
     if(req.isAuthenticated()){
         res.redirect("neighborhood")
@@ -74,7 +74,7 @@ router.get("/signup", (req, res) =>{
     }
 });
 
-//login page
+// authentication on login page
 router.get("/login", (req, res) =>{
     if(req.isAuthenticated()){
         res.render("/neighborhood")
@@ -83,7 +83,7 @@ router.get("/login", (req, res) =>{
     }
 });
 
-//get user profile page  
+// get user profile page  
 router.get('/profile', isLoggedIn, (req, res) =>{
   // 1. read user profile from DB
   console.log(req.session.passport.user);
@@ -101,7 +101,7 @@ router.get('/profile', isLoggedIn, (req, res) =>{
 })
 
 
-//Update user profile data Route.put????
+// Update user profile data 
 router.post("/sendData", isLoggedIn, (req, res) =>{
     console.log(req.session.passport.user)
     console.log(req.body)
@@ -114,6 +114,7 @@ router.post("/sendData", isLoggedIn, (req, res) =>{
                 zipcode: req.body.zipcode,
                 address: req.body.address,
                 phone: req.body.phone,
+                primephone: req.body.primephone,
             }
         },
         (err, user) =>{
@@ -121,7 +122,7 @@ router.post("/sendData", isLoggedIn, (req, res) =>{
         })
 })
 
-//get neighborhood page (fetch data from db and send to thread page)
+// get neighborhood page (fetch data from db and send to thread page)
 router.get("/neighborhood", isLoggedIn, (req, res) =>{
     Posts.find({}, (err, results)=>{
       if(err){
@@ -139,7 +140,7 @@ router.get("/neighborhood", isLoggedIn, (req, res) =>{
   })
 
 
-//get submit page
+// get submit page
 router.get("/neighborhoodPost", (req, res) =>{
     console.log("USERNAME: ", res.user)
     if(req.isAuthenticated()){
@@ -150,8 +151,8 @@ router.get("/neighborhoodPost", (req, res) =>{
     }
 });
 
-//POST
-//Submit a neighborhood post
+// POST
+// Submit a neighborhood post
 router.post("/submit", async (req, res) =>{
     console.log("POST DESCRIPTION", req.body.postit)
     console.log("bgColor: ", req.body.bgcolor.substring(1))
@@ -172,7 +173,7 @@ router.post("/submit", async (req, res) =>{
     }
 })
 
-//like posts
+// like posts
 router.post("/like/:id", isLoggedIn, async (req, res) =>{
     try{
        //find the post to update likes
