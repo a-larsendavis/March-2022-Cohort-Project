@@ -1,9 +1,12 @@
 <%- include("partials/header.ejs") %>
 <%- include("partials/navbar.ejs") %>
+<link rel="stylesheet" href="settings.css" >
 
+
+<p class="alert"><b>ALERT</b>: Your are about to delete your account permanetley. This has permanet consequences. Proceed with caution!</p>
 
 <form action="/delete/:id" method="delete">
-  <button type="submit">DELETE</button>
+  <button type="submit">DELETE ACCOUNT</button>
 </form>
 
 
