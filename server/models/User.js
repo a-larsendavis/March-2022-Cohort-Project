@@ -12,6 +12,7 @@ let userSchema = new mongoose.Schema({
     zipcode:String,
     address:String,
     phone:String,
+    primephone:String,
     isAdmin: {
         type: Boolean,
         default: false
