@@ -11,6 +11,9 @@ const PostSchema = new mongoose.Schema(
         zipcode: {
             type:String,
         },
+        username: {
+            type:String,
+        },
         bgColor:{
             type:String,
             default:"9CAA9C",

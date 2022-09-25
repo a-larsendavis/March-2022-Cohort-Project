@@ -23,7 +23,6 @@ router.get("/", (req, res) =>{
     }
 });
 
-
 // get resources page
 router.get('/resources', isLoggedIn, (req, res) =>{
     res.render("resources");
@@ -64,7 +63,6 @@ router.get('/account', isLoggedIn, (req, res) => {
     res.render("account")
 });
 
-
 // get signup page
 router.get("/signup", (req, res) =>{
     if(req.isAuthenticated()){
@@ -97,7 +95,6 @@ router.get('/profile', isLoggedIn, (req, res) =>{
         res.render("profile", {userResult: result});
     }
   })
-  
 })
 
 
@@ -124,7 +121,7 @@ router.post("/sendData", isLoggedIn, (req, res) =>{
 
 // get neighborhood page (fetch data from db and send to thread page)
 router.get("/neighborhood", isLoggedIn, (req, res) =>{
-    Posts.find({}, (err, results)=>{
+    Posts.find({zipcode: req.user.zipcode}, (err, results)=>{
       if(err){
         res.status(400).json({message: "Not able to find the data in the DB"}) 
       } else{
@@ -156,12 +153,15 @@ router.get("/neighborhoodPost", (req, res) =>{
 router.post("/submit", async (req, res) =>{
     console.log("POST DESCRIPTION", req.body.postit)
     console.log("bgColor: ", req.body.bgcolor.substring(1))
-    console.log("UserName:", req.body.userId)
+    console.log("zipcode:", req.user.zipcode)
+    console.log("Username:", req.user.username)
     try{
         const post = new Posts({
             user: req.user.id,
             postit: req.body.postit,
-            bgColor: req.body.bgcolor.substring(1) //bc color will send in hex format (#eeeee) so remove "#"
+            bgColor: req.body.bgcolor.substring(1), //bc color will send in hex format (#eeeee) so remove "#"
+            zipcode: req.user.zipcode,
+            username: req.user.username
         });
         //save post
         const savePost = post.save();
@@ -181,23 +181,17 @@ router.post("/like/:id", isLoggedIn, async (req, res) =>{
     
        // check if the post has already been liked
       if(post.likes.filter(like => like.user.toString() === req.user.id).length> 0){
-
         return res.redirect('/neighborhood')
       }
       post.likes.unshift({ user : req.user.id});
-      
       await post.save();
       return res.redirect('/neighborhood')
-
-
       res.json(post.likes);
     }catch(err){
         console.error(err.message);
         res.status(500).send('Server Error')
     }
 });
-
-
 
 //export
 module.exports = router;

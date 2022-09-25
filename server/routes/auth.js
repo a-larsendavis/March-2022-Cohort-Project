@@ -55,24 +55,47 @@ router.post("/auth/signup", function(req, res) {
 
 
 //login user
+//login user
 router.post("/auth/login", (req, res) => {
-    //create new user obj
-    const user = new UserModel({
-        username: req.body.username,
-        password: req.body.password
-    });
-    //using possport login method - check user credentials
-    req.login(user, (err) =>{
-        if(err){
-            console.log(err)
-        } else{
-            passport.authenticate("local")(req, res, function(){
-                console.log(user);
-                res.redirect("/neighborhood");
-            });
-        }
-    });
+  //create new user obj
+  const user = new UserModel({
+      username: req.body.username,
+      password: req.body.password
+  });
+  //using possport login method - check user credentials
+  req.login(user, (err) =>{
+      if(err){
+          console.log(err);
+          return res.redirect('/login');
+      } else{
+          console.log("in auth/login");
+          // passport method to refresh /login and empty input after failed login
+          passport.authenticate("local", { failureRedirect: '/login', failureMessage: true })(req, res, function(){
+              console.log(user);
+              res.redirect("/neighborhood");
+          });
+      }
+  });
 });
+
+// router.post("/auth/login", (req, res) => {
+//     //create new user obj
+//     const user = new UserModel({
+//         username: req.body.username,
+//         password: req.body.password
+//     });
+//     //using possport login method - check user credentials
+//     req.login(user, (err) =>{
+//         if(err){
+//             console.log(err)
+//         } else{
+//             passport.authenticate("local")(req, res, function(){
+//                 console.log(user);
+//                 res.redirect("/neighborhood");
+//             });
+//         }
+//     });
+// });
 
 //delete user
 router.get("/delete/:_id", async (req, res) => { //:id allows us to delete an account by user id that is provided by mongoDB
