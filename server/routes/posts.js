@@ -151,10 +151,8 @@ router.get("/neighborhoodPost", (req, res) =>{
 // POST
 // Submit a neighborhood post
 router.post("/submit", async (req, res) =>{
-    console.log("POST DESCRIPTION", req.body.postit)
-    console.log("bgColor: ", req.body.bgcolor.substring(1))
-    console.log("zipcode:", req.user.zipcode)
-    console.log("Username:", req.user.username)
+
+    // populate Post schema
     try{
         const post = new Posts({
             user: req.user.id,
