@@ -121,23 +121,7 @@ router.post("/sendData", isLoggedIn, (req, res) =>{
         })
 })
 
-/// !!! DOES NOT WORK
 //get neighborhood page (fetch data from db and send to thread page)
-// router.get("/neighborhood", isLoggedIn, (req, res) =>{
-//     let userId = req.session.passport.user;
-//     console.log(`userId: ${userId}`); 
-//     //console.log(req.session.passport)  {_id: req.session.passport.user}
-//     let allPosts = [{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"}]
-//     //let allPosts = Posts.find();
-//     //console.log(allPosts);
-//     // console.log(req.session.passport)
-//     // //fetch all quotes from db
-//     // User.findOne(req.session.passport.user, {username: req.session.passport.username})
-//     res.render("neighborhood", {allPosts: allPosts});
-// })
-
-
-// !!!TEST
 router.get("/neighborhood", isLoggedIn, (req, res) =>{
     Posts.find({}, (err, results)=>{
       if(err){
@@ -151,9 +135,8 @@ router.get("/neighborhood", isLoggedIn, (req, res) =>{
           res.render("neighborhood", {allPosts: results});
         }
       }
-    })
+    }).sort(({createdAt: -1}))
   })
-
 
 
 //get submit page
@@ -172,6 +155,7 @@ router.get("/neighborhoodPost", (req, res) =>{
 router.post("/submit", async (req, res) =>{
     console.log("POST DESCRIPTION", req.body.postit)
     console.log("bgColor: ", req.body.bgcolor.substring(1))
+    console.log("UserName:", req.body.userId)
     try{
         const post = new Posts({
             user: req.user.id,
@@ -212,7 +196,6 @@ router.post("/like/:id", isLoggedIn, async (req, res) =>{
     }
 });
 
-});
 
 
 //export
