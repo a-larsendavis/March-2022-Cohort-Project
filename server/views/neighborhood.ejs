@@ -10,17 +10,13 @@
 
         <!-- check to see if any posts are available ? show message  -->
 
-        <!-- Dummy data -->
-        <%# allPosts = [{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-04T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"6D929B","postit":"A new post from me!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"},{"zipcode": "12345","bgColor":"F5FAFA","postit":"Someone missing a cat?!","img":"","likes":[],"createdAt" : "2022-09-10T02:35:06.410+0000","updatedAt" : "2022-09-10T02:35:06.410+0000"}] %> 
-        <%# console.log(allPosts) %> 
-
         <% if (allPosts.length < 1  || allPosts === false){ %>
             <div class="mt-5 text-center">No Posts to show!</div>
         <%  } else { %>
             <% allPosts.forEach(post => { %>
                 <% let bgcolor = "#" + post.bgColor %> 
                 <div class="post_content"  style='background-color: <%=bgcolor%> '>
-                    <span class="username">USERNAME</span>
+                    <span class="username"><%= post.username %></span>
                     <p class="postContent" id="post-cards" style="color:black">
                         <%= post.postit %>
                     </p>
@@ -38,9 +34,6 @@
                                 </button>
                               
                             </form>
-                          
-                            
-                            
                            
                         </div>
                        
