@@ -13,6 +13,10 @@ let userSchema = new mongoose.Schema({
     address:String,
     phone:String,
     primephone:String,
+    ername:String,
+    erphone:String,
+    userpartner:String,
+    primephysician:String,
     isAdmin: {
         type: Boolean,
         default: false
