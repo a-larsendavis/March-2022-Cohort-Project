@@ -21,6 +21,7 @@
                         <input 
                         type="text" 
                         name="fullname" 
+                        placeholder="Enter your name"
                         value="<%= userResult.fullname %>">
                       
                     </div>
@@ -31,12 +32,11 @@
                         <input 
                         type="date" 
                         name="birth" 
-                        placeholder="Enter your birth" 
+                        placeholder="Enter your birthday" 
                         <%# The following value attribute uses ternary operator %>    
                         value="<%= userResult.birth ? userResult.birth.toISOString().substr(0, 10) : "" %>">
-                        
-
                     </div>
+
                     <div class="inputfield">
                         <i class='fas fa-envelope-square' style='font-size:24px'></i>
                         <label>Email</label>
@@ -120,7 +120,17 @@
                         name="userpartner"
                         placeholder="Enter your spouse or partner's name" 
                         value="<%= userResult.userpartner %>">
-                      
+                    </div>
+
+                    <div class="inputfield">
+                        <i class='fa fa-birthday-cake' style='font-size:24px'></i>
+                        <label>Partner Date of birth</label>
+                        <input 
+                        type="date" 
+                        name="partnerbirth" 
+                        placeholder="Enter your partner's birthday" 
+                        <%# The following value attribute uses ternary operator %>    
+                        value="<%= userResult.partnerbirth ? userResult.partnerbirth.toISOString().substr(0, 10) : "" %>">
                     </div>
 
                     <div class="inputfield" >

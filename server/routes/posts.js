@@ -51,7 +51,6 @@ router.get("/neighborhood", isLoggedIn, (req, res) =>{
           console.log("Everything is good. Just no data.")
           res.send("No data in database")
         }else{
-          
           res.render("neighborhood", {allPosts: results});
         }
       }
@@ -92,6 +91,21 @@ router.post("/submit", async (req, res) =>{
         res.send(err)
     }
 })
+
+//____________________________________________________
+//delete posts
+// router.get("/delete/posts/:_id", async (req, res) => { 
+//     console.log("Delete Post button Pushed") 
+//     console.log(req.post.id)
+//     console.log()
+//     try{
+//     await Posts.deleteOne({id: req.post.id}).then();
+//     return res.redirect("/neighborhood");
+//     } catch (err) {
+//     return res.status(500).json(err);
+//     }
+    
+//   });
 
 // like posts
 router.post("/like/:id", isLoggedIn, async (req, res) =>{

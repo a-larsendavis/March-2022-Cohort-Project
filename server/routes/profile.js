@@ -30,8 +30,8 @@ router.get('/profile', isLoggedIn, (req, res) =>{
 
 // Update user profile data 
 router.post("/sendData", isLoggedIn, (req, res) =>{
-    console.log(req.session.passport.user)
     console.log(req.body)
+    // user session user to find/update user info in db
     User.findByIdAndUpdate(req.session.passport.user,
         {
             $set : {
@@ -46,9 +46,11 @@ router.post("/sendData", isLoggedIn, (req, res) =>{
                 erphone:req.body.erphone,
                 userpartner:req.body.userpartner,
                 primephysician:req.body.primephysician,
+                partnerbirth:req.body.partnerbirth,
 
             }
         },
+        // redirect to same page, rendered data should be up to date
         (err, user) =>{
             res.redirect("/profile")
         })

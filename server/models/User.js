@@ -17,6 +17,7 @@ let userSchema = new mongoose.Schema({
     erphone:String,
     userpartner:String,
     primephysician:String,
+    partnerbirth:Date,
     isAdmin: {
         type: Boolean,
         default: false
