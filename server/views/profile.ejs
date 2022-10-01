@@ -21,6 +21,7 @@
                         <input 
                         type="text" 
                         name="fullname" 
+                        placeholder="Enter your name"
                         value="<%= userResult.fullname %>">
                       
                     </div>
@@ -31,12 +32,11 @@
                         <input 
                         type="date" 
                         name="birth" 
-                        placeholder="Enter your birth" 
+                        placeholder="Enter your birthday" 
                         <%# The following value attribute uses ternary operator %>    
                         value="<%= userResult.birth ? userResult.birth.toISOString().substr(0, 10) : "" %>">
-                        
-
                     </div>
+
                     <div class="inputfield">
                         <i class='fas fa-envelope-square' style='font-size:24px'></i>
                         <label>Email</label>
@@ -78,7 +78,7 @@
                         name="phone" 
                         placeholder="Enter your Phone number" 
                         value="<%= userResult.phone %>">
-
+                    </div>
                      <label for="prim-phone">Primary Phone (User Selection: <%= userResult.primephone %>)</label>
                      <div class="inputfield">
                          <select name="primephone" id="phones-select">
@@ -88,10 +88,67 @@
                              <option value="Work">Work</option>
                          </select>
                      </div>
+
+                     
+
+                     <div class="inputfield">
+                        <i class="fa-solid fa-hospital" style='font-size:24px;padding: 0px 0px'></i>
+                        <label>Emergency Contact Name</label>
+                        <input 
+                        type="text" 
+                        name="ername" 
+                        placeholder="Enter Emergency Contact Name"
+                        value="<%= userResult.ername %>">
+                    </div>
+
+                    
+                    <div class="inputfield">
+                        <i class="fa fa-volume-control-phone" style="font-size:24px"></i>
+                        <label>Emergency Contact Phone</label>
+                        <input 
+                        type="tel"  
+                        name="erphone" 
+                        placeholder="Enter their Emergency Contact Phone" 
+                        value="<%= userResult.erphone %>">
+                    </div>
+
+                    <div class="inputfield" >
+                        <i class="fa-solid fa-heart" style='font-size:24px;padding: 0px 0px'></i>
+                        <label>Spouse/Domestic Partner</label>
+                        <input 
+                        type="text" 
+                        name="userpartner"
+                        placeholder="Enter your spouse or partner's name" 
+                        value="<%= userResult.userpartner %>">
+                    </div>
+
+                    <div class="inputfield">
+                        <i class='fa fa-birthday-cake' style='font-size:24px'></i>
+                        <label>Partner Date of birth</label>
+                        <input 
+                        type="date" 
+                        name="partnerbirth" 
+                        placeholder="Enter your partner's birthday" 
+                        <%# The following value attribute uses ternary operator %>    
+                        value="<%= userResult.partnerbirth ? userResult.partnerbirth.toISOString().substr(0, 10) : "" %>">
+                    </div>
+
+                    <div class="inputfield" >
+                        <i class="fa-solid fa-heart-pulse" style='font-size:24px;padding: 0px 0px'></i>
+                        <label>Primary Physician</label>
+                        <input 
+                        type="text" 
+                        name="primephysician" 
+                        placeholder="Enter your Primary Physician's name"
+                        value="<%= userResult.primephysician %>">
+                      
+                    </div>
+
                      <br>
                      <button id="profileSubmit" type="submit">Submit</button>
+                     <br>
                      <a class="profileSubmit" href="/profileSettings">Settings</a>
-                     </div>
+                     
                 </div>           
             </div>
         </div>

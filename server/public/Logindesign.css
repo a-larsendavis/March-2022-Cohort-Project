@@ -3,10 +3,11 @@
 }
 
 body{
-    background:#C1DAD6DA;
+    background:#C1DAD6DA url("./assets/background.jpg") no-repeat fixed center;
     align-items: center;
     position: relative;
     padding: 0;
+    /* background-image: url("./assets/background.jpg") no-repeat fixed center; */
 }
 
 h1{
