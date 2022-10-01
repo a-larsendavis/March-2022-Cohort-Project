@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 
-// Require User Model fromt he models folder
+// Require User Model from the models folder
 const User = require('../models/User');
 const Posts = require('../models/Posts');
 
@@ -23,46 +23,6 @@ router.get("/", (req, res) =>{
     }
 });
 
-// get resources page
-router.get('/resources', isLoggedIn, (req, res) =>{
-    res.render("resources");
-});
-
-// get events page
-router.get('/events', isLoggedIn, (req, res) =>{
-    res.render("events");
-});
-
-// get neighborhoodwatch resource page
-router.get('/neighborhoodwatch', isLoggedIn, (req, res) =>{
-    res.render("neighborhoodwatch");
-});
-
-// get restaurant resource page
-router.get('/restaurants', isLoggedIn, (req, res) =>{
-    res.render("restaurants");
-});
-
-// get pets resource page
-router.get('/pets', isLoggedIn, (req, res) =>{
-    res.render("pets");
-});
-
-// get pets resource page
-router.get('/courses', isLoggedIn, (req, res) =>{
-    res.render("courses");
-});
-
-// settings
-router.get('/profileSettings', isLoggedIn, (req, res) => {
-    res.render("settings")
-});
-
-// get account page
-router.get('/account', isLoggedIn, (req, res) => {
-    res.render("account")
-});
-
 // get signup page
 router.get("/signup", (req, res) =>{
     if(req.isAuthenticated()){
@@ -80,44 +40,6 @@ router.get("/login", (req, res) =>{
         res.render("login");
     }
 });
-
-// get user profile page  
-router.get('/profile', isLoggedIn, (req, res) =>{
-  // 1. read user profile from DB
-  console.log(req.session.passport.user);
-  User.findById(req.session.passport.user, (err, result) => {
-    if (err){
-        console.log(err);
-    }
-    else{
-        console.log("Result : ", result);
-        // 2. pass user profile into profile.ejs 
-        res.render("profile", {userResult: result});
-    }
-  })
-})
-
-
-// Update user profile data 
-router.post("/sendData", isLoggedIn, (req, res) =>{
-    console.log(req.session.passport.user)
-    console.log(req.body)
-    User.findByIdAndUpdate(req.session.passport.user,
-        {
-            $set : {
-                fullname: req.body.fullname,
-                birth: req.body.birth,
-                email: req.body.email,
-                zipcode: req.body.zipcode,
-                address: req.body.address,
-                phone: req.body.phone,
-                primephone: req.body.primephone,
-            }
-        },
-        (err, user) =>{
-            res.redirect("/profile")
-        })
-})
 
 // get neighborhood page (fetch data from db and send to thread page)
 router.get("/neighborhood", isLoggedIn, (req, res) =>{

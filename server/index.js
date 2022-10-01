@@ -13,6 +13,9 @@ app.use(morgan("common"));
 //require routers
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
+const profileRoute = require("./routes/profile")
+const resourcesRoute = require("./routes/resources")
+
 
 //body parsers
 app.use(express.json());
@@ -57,6 +60,8 @@ mongoose
 //use Routes
 app.use("/", authRoute);
 app.use("/", postRoute);
+app.use("/", profileRoute);
+app.use("/", resourcesRoute);
 
 // LISTENER
 const PORT = process.env.PORT || 3000;
